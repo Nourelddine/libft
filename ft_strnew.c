@@ -6,7 +6,7 @@
 /*   By: nabdelba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/13 11:43:34 by nabdelba          #+#    #+#             */
-/*   Updated: 2019/04/17 20:45:06 by nabdelba         ###   ########.fr       */
+/*   Updated: 2019/04/21 23:39:34 by nabdelba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strnew(size_t size)
 {
 	char *chunk;
 
-	if (!(chunk = malloc(size + 1)))
+	if (!(chunk = (char *)malloc(size + 1)))
 		return (NULL);
 	ft_bzero(chunk, size + 1);
 	return (chunk);
