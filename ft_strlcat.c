@@ -6,7 +6,7 @@
 /*   By: nabdelba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/13 19:05:41 by nabdelba          #+#    #+#             */
-/*   Updated: 2019/04/20 21:45:31 by nabdelba         ###   ########.fr       */
+/*   Updated: 2019/04/22 19:06:37 by nabdelba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ size_t		ft_strlcat(char *dst, const char *src, size_t siz)
 	size_t		n;
 	size_t		dlen;
 
-	d = dst;
-	s = src;
+	d = (char *)dst;
+	s = (const char *)src;
 	n = siz;
 	while (n-- && *d)
 		d++;

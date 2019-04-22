@@ -6,7 +6,7 @@
 /*   By: nabdelba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/13 11:07:00 by nabdelba          #+#    #+#             */
-/*   Updated: 2019/04/13 11:07:26 by nabdelba         ###   ########.fr       */
+/*   Updated: 2019/04/22 19:09:22 by nabdelba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char		chr;
-	const char	*d;
+	unsigned char	chr;
+	const char		*d;
 
-	chr = c;
+	chr = (unsigned char)c;
 	d = s;
 	while (*s)
 		s++;

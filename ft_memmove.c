@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nabdelba <nabdelba@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nabdelba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/13 10:05:17 by nabdelba          #+#    #+#             */
-/*   Updated: 2019/04/22 16:26:18 by nabdelba         ###   ########.fr       */
+/*   Updated: 2019/04/22 19:02:39 by nabdelba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	else
 		while (len--)
 			*d++ = *s++;
-	return (dst);
+	return ((void *)dst);
 }

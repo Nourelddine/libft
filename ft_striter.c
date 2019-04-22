@@ -6,7 +6,7 @@
 /*   By: nabdelba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/13 11:51:19 by nabdelba          #+#    #+#             */
-/*   Updated: 2019/04/13 11:51:21 by nabdelba         ###   ########.fr       */
+/*   Updated: 2019/04/22 19:05:32 by nabdelba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_striter(char *s, void (*f)(char *))
 {
-	if (f == NULL || s == NULL)
+	if (!f || !s)
 		return ;
 	while (*s)
 		f(s++);

@@ -6,7 +6,7 @@
 /*   By: nabdelba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/13 11:04:49 by nabdelba          #+#    #+#             */
-/*   Updated: 2019/04/13 11:04:59 by nabdelba         ###   ########.fr       */
+/*   Updated: 2019/04/22 19:03:39 by nabdelba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char chr;
+	unsigned char chr;
 
-	chr = c;
+	chr = (unsigned char)c;
 	while (*s != chr && *s)
 		s++;
 	return (*s == chr ? (char *)s : NULL);
