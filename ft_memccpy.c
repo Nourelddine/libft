@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nabdelba <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nabdelba <nabdelba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/13 09:54:14 by nabdelba          #+#    #+#             */
-/*   Updated: 2019/04/20 22:01:06 by nabdelba         ###   ########.fr       */
+/*   Updated: 2019/04/22 16:23:27 by nabdelba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	*ft_memccpy(void *dst,
 	unsigned char		chr;
 
 	chr = c;
-	d = dst;
-	s = src;
+	d = (unsigned char *)dst;
+	s = (unsigned const char *)src;
 	while (n--)
 	{
 		*d++ = *s;
