@@ -6,13 +6,13 @@
 /*   By: nabdelba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/30 03:39:56 by nabdelba          #+#    #+#             */
-/*   Updated: 2019/04/30 03:42:18 by nabdelba         ###   ########.fr       */
+/*   Updated: 2019/04/30 03:55:33 by nabdelba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		find_char(const char *s, char c)
+int		ft_findchr(const char *s, char c)
 {
 	int i;
 
