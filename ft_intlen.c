@@ -3,30 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nabdelba <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nabdelba <nabdelba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/16 14:23:40 by nabdelba          #+#    #+#             */
-/*   Updated: 2019/04/17 21:42:14 by nabdelba         ###   ########.fr       */
+/*   Updated: 2019/10/31 16:16:54 by nabdelba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_intlen(int c)
+int		ft_intlen(intmax_t num)
 {
-	int s;
-	int i;
-	int zeros;
+	int		i;
 
-	zeros = 10;
 	i = 0;
-	s = 1000000000;
-	while (s)
-	{
-		if (c >= s)
-			return (zeros - i);
-		s /= 10;
+	while (num /= 10)
 		i++;
-	}
-	return (0);
+	return (i + 1);
 }

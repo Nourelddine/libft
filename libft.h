@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nabdelba <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nabdelba <nabdelba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/13 19:08:04 by nabdelba          #+#    #+#             */
-/*   Updated: 2019/04/30 03:51:35 by nabdelba         ###   ########.fr       */
+/*   Updated: 2019/10/31 16:15:36 by nabdelba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <string.h>
 # include <unistd.h>
+# include <stdint.h>
 
 typedef	struct		s_list
 {
@@ -43,7 +44,7 @@ char				**ft_strsplit(char const *s, char c);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s);
-char				*ft_itoa(int num);
+char				*ft_itoa(intmax_t num);
 char				*ft_strrev(char *s);
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
@@ -84,7 +85,7 @@ int					ft_iswhite(const char s);
 int					ft_findchr(const char *s, char c);
 int					ft_strequ(char const *s1, char const *s2);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
-int					ft_intlen(int c);
+int					ft_intlen(intmax_t c);
 size_t				ft_strlen(const char *s);
 size_t				ft_strlcat(char *dest, const char *src, size_t size);
 t_list				*ft_lstnew(void const *content, size_t content_size);
