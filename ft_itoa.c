@@ -3,38 +3,64 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nabdelba <nabdelba@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aelouazz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/16 14:17:14 by nabdelba          #+#    #+#             */
-/*   Updated: 2019/08/28 15:47:01 by nabdelba         ###   ########.fr       */
+/*   Updated: 2020/12/21 16:30:23 by aelouazz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_itoa(intmax_t n)
+/*
+** -----------------------------------------------------------------------------
+** this function calculate the amount of chars needed to represent @nb         |
+** -----------------------------------------------------------------------------
+*/
+
+static int			calculate_size(unsigned int nb)
+{
+	unsigned int	size;
+
+	size = 0;
+	while (nb >= 10)
+	{
+		nb /= 10;
+		++size;
+	}
+	return (size + 1);
+}
+
+/*
+** -----------------------------------------------------------------------------
+** convert @nbr to an ASCII string and save it in the allocated @str           |
+** -----------------------------------------------------------------------------
+*/
+
+char				*ft_itoa(int nbr)
 {
 	char			*str;
-	int				i;
-	uintmax_t		num;
+	unsigned int	nb;
+	unsigned int	index;
+	unsigned int	size;
 
-	i = 0;
-	num = n;
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (n < 0)
-		num = -n;
-	if (!(str = ft_strnew(ft_intlen(n))))
+	if (nbr < 0)
+		nb = (unsigned int)(nbr * -1);
+	else
+		nb = (unsigned int)nbr;
+	size = (unsigned int)calculate_size(nb);
+	index = 0;
+	if (!(str = (char *)malloc(sizeof(char) * (size + 1 + (nbr < 0 ? 1 : 0)))))
 		return (NULL);
-	while (num > 0)
+	if (nbr < 0 && (str[index] = '-'))
+		size++;
+	index = size - 1;
+	while (nb >= 10)
 	{
-		str[i] = (num % 10) + 48;
-		num = num / 10;
-		i++;
+		str[index--] = (char)(nb % 10 + 48);
+		nb /= 10;
 	}
-	if (n < 0)
-		str[i++] = '-';
-	else if (n == 0)
-		str[0] = '0';
-	return (ft_strrev(str));
+	str[index] = (char)(nb % 10 + 48);
+	str[size] = '\0';
+	return (str);
 }

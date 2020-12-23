@@ -6,7 +6,7 @@
 /*   By: nabdelba <nabdelba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/13 19:08:04 by nabdelba          #+#    #+#             */
-/*   Updated: 2019/10/31 16:15:36 by nabdelba         ###   ########.fr       */
+/*   Updated: 2020/12/20 19:22:00 by nabdelba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char				**ft_strsplit(char const *s, char c);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s);
-char				*ft_itoa(intmax_t num);
+char				*ft_itoa(int nbr);
 char				*ft_strrev(char *s);
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
@@ -96,4 +96,5 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void				ft_lstinsert(t_list **lst, t_list *node);
+void				sort_by_name(t_list **head, int count);
 #endif
