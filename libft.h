@@ -19,6 +19,9 @@
 # include <unistd.h>
 # include <stdint.h>
 
+# define RETURN_IF(x, ret) if (x) return (ret);
+# define BUFF_SIZE 16
+
 typedef	struct		s_list
 {
 	void			*content;
@@ -97,4 +100,5 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void				ft_lstinsert(t_list **lst, t_list *node);
 void				sort_by_name(t_list **head, int count);
+int					ft_getline(const int fd, char **line);
 #endif
